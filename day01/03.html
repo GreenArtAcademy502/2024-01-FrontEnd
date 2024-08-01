@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- style태그는 css 문법 영역 -->
+    <!--
+        css는 선택자: 태그/클래스/아이디 선택자
+        태그 선택자: 태그명
+        클래스 선택자: .클래스명
+        아이디 선택자: #아이디명
+
+        선택한 엘리먼트들에게 속성을 적용
+
+        클래스는 여러 엘리먼트에 같은 속성명을 줄 수 있다.
+        한 엘리먼트에는 한 아이디만 사용해야 한다.
+    -->
+    <!--
+        css는 화면에 렌더링이 될 때 바로 적용이 됐으면 하기 때문에
+        위쪽에 작성이 되거나 import를 한다. 
+        (css로딩이 끝난 후 body 렌더링을 하기 위해)
+
+        js는 화면 렌더링이 끝난 후 로딩을 한다.
+        주로 js는 엘리먼트를 컨트롤
+    -->
+    <style>
+        /* css 주석, html 주석은 사용불가 */
+        div { color: cadetblue; } /* color는 폰트 색상 */
+        .cls-1 { background-color: beige; }
+        #id-1 { font-weight: bold; }
+    </style>    
+</head>
+<body>
+    <div>1-div</div>
+    <div class="cls-1 cls-2 cls-3 baba dddd" id="id-2" onclick=" alert('안녕'); ">2-div</div>
+    <p class="cls-1" id="id-1" style="color: red;">3-p</p>
+    <script>
+        var $id_1 = document.getElementById('id-1');
+        console.log('$id_1:', $id_1);
+        $id_1.addEventListener('click', function() {
+            alert('하하하');
+        });
+    </script>
+</body>
+</html>
