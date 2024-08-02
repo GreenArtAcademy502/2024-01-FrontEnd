@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="padding-bottom: 200px;">
+    <!-- 
+        form tag 
+        엔드유저가 작성한/선택한 내용을 백엔드로 전달
+        action: End-Point
+        method: 전달 방식(get/post)
+        input관련 엘리먼트의 name이 백엔드에서 값을 받는 멤버필드명과 같아야 한다.
+    -->
+    <h3>post방식</h3>
+    <form action="http://localhost:8080/api/user/test" method="post">
+        <div>
+            <label>아이디: <input type="text" name="uid"></label>
+        </div>
+        <div>
+            <label>비밀번호: <input type="password" name="upw"></label>
+        </div>
+        <div>
+            <label>이름: <input type="text" name="nm"></label>
+        </div>
+        <div>
+            <label>프로필 사진: <input type="file" name="pic" accept="image/*"></label>
+        </div>
+        <div>
+            <input type="submit" value="전송">
+        </div>
+    </form>
+
+    <hr>
+    <h3>get방식</h3>
+    <form action="http://localhost:8080/api/user/test" method="get">
+        <div>
+            <label>아이디: <input type="text" name="uid"></label>
+        </div>
+        <div>
+            <label>비밀번호: <input type="password" name="upw"></label>
+        </div>
+        <div>
+            <label>이름: <input type="text" name="nm"></label>
+        </div>
+        <div>
+            <label>프로필 사진: <input type="file" name="pic" accept="image/*"></label>
+        </div>
+        <div>
+            <input type="submit" value="전송">
+        </div>
+    </form>
+
+    <h3>form 태그에서 사용할 수 있는 자식 노드</h3>
+    <form action="#" method="post">
+        <!-- label 태그로 감싼 여부 차이-->
+        <!-- tabindex는 탭 버튼 클릭시 포커스 이동되는 순서를 지정할 수 있음 -->
+        <div>아이디: <input type="text" name="" id="" tabindex="1"></div>
+        <div><label>아이디: <input type="text" name="" id="" tabindex="3"></label></div>
+       
+        <!-- label로 감싸줄 수 없는 상황일 때 for - id값을 연결하여 사용 -->
+        <div><label for="id-input-1">아이디:</label></div>
+        <div><input type="text" name="" id="id-input-1" tabindex="2"></div>
+       
+        <div><label>넘버: <input type="number" value="10" step="5"></label></div>
+
+        <!-- 
+            버튼 만드는 방법들 
+            버튼 1, 2: 일반 버튼
+            버튼 3, 4: 서브밋 버튼
+            버튼 5   : 이미지 서브밋 버튼
+            버튼 6   : 리셋 버튼
+
+            submit버튼은 form 태그의 트리거 역할(백엔드 데이터 전송 시작!)
+            reset버튼은 form 엘리먼트들을 초기상태로 만듬
+
+            종류는: 일반버튼, 서브밋버튼, 리셋버튼
+
+            form태그 바깥에 위치하면 종류와 상관없이 일반 버튼이 됨.
+        -->
+        <div>버튼1: <input type="button" value="button"></div>
+        <div>버튼2: <button type="button">버튼2</button></div>
+        <div>버튼3: <button>버튼3</button></div>
+        <div>버튼4: <input type="submit" value="submit"></div>
+        <div>버튼5: <input type="image" width="100" src="https://t3.ftcdn.net/jpg/04/54/09/98/360_F_454099801_32LqElT2W1vgRQ6YRsp3h2IsKQxTCnaG.jpg"></div>
+            
+        <div>버튼6: <input type="reset" value="reset"></div>
+
+
+        <!--
+            checkbox: 여러값을 선택하고 싶을 때 사용 
+            실제로 날아가는 값은 value값이 날아감 
+            name을 통일(하나의 그룹이 된다.) > 배열로 넘어감 > 백엔드는 List형식으로 받으면 됨
+            예) List<Integer> hobbyList;
+        -->
+        <div>
+            취미: 
+            <label>축구<input type="checkbox" name="hobbyList" value="1" checked></label>
+            <label>농구<input type="checkbox" name="hobbyList" value="2"></label>
+            <label>배구<input type="checkbox" name="hobbyList" value="3" checked></label>
+        </div>
+
+        <!-- 색상 선택 -->
+        <div>
+            <label>색 선택: <input type="color" value="#7F1A1A"></label>
+        </div>
+
+        <!-- 
+            Picker 피커 
+            날짜, 일시 선택
+        -->
+        <div>
+            <label>날짜<input type="date" value="2024-01-01"></label>
+        </div>
+
+        <div>
+            <label>일시<input type="datetime-local" value="2024-01-02 12:13:14"></label>
+        </div>
+
+        <!-- 
+            radio-button 단 하나만 선택 가능함
+            name 통일은 필수 (하나의 그룹이 되고 그룹 중 하나의 값만 선택 가능)
+            tip. 하나 정도 default로 선택 (checked 속성)
+        -->
+        <div>
+            성별: 
+            <label>여성<input type="radio" value="0"></label>
+            <label>남성<input type="radio" value="1"></label>
+            <label>모름<input type="radio" value="2"></label>
+            <br>
+            성별: 
+            <label>여성<input type="radio" name="gender" value="0" checked></label>
+            <label>남성<input type="radio" name="gender" value="1"></label>
+            <label>모름<input type="radio" name="gender" value="2"></label>
+        </div>
+
+        <div>
+            <label><input type="range" value="0" min="0" max="100" id="id-range"></label>
+            <span id="id-span-range-value">0</span>
+        </div>
+    </form>
+    <script>
+        var $range = document.getElementById('id-range');
+        var $range_value = document.getElementById('id-span-range-value');
+
+        //클로저, 클로저 아닌 방법
+        $range.addEventListener('change', function(e) {
+            console.log(e.target.value);
+            $range_value.innerText = e.target.value;
+        });
+    </script>
+</body>
+</html>

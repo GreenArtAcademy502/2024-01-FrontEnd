@@ -10,13 +10,16 @@
 
     <!-- a태그는 href 속성이 필요 -->
     <div>
+        <a>하이퍼링크</a>
+    </div>
+    <div>
         <a href="https://www.naver.com">네이버로 이동</a>
     </div>
     <div>
-        <a href="https://www.google.com" target="_blank">새창으로 구글로 이동</a>
+        <a href="https://www.google.com" target="_blank">새탭으로 구글로 이동</a>
     </div>
     <div>
-        <a href="https://www.airbnb.com" target="_blank">airbnb로 이동</a>
+        <a href="https://www.airbnb.com" target="_blank">새탭으로airbnb로 이동</a>
     </div>
 
 
@@ -50,22 +53,26 @@
         css, 태그로 레이아웃을 구성 (css 내용에 따라 레이아웃이 천차만별로 변경 가능)
         현재는 table형태의 표시가 필요한 경우에만 사용
     -->
-    <style>
-        table { caption-side: bottom; }
-        table, td { border: 1px solid #ccc; border-collapse: collapse; }
-        td { padding: 10px; }
+    <style>        
+        table, td, th { border: 1px solid #ccc; border-collapse: collapse; }
+        td, th { padding: 10px; }
         thead { background-color: cornflowerblue; color: #ffffff; }
+        
+        .text-center-important { text-align: center !important; }
+        .text-center { text-align: center; }
+        .text-right { text-align: right; }
     </style>
     <table>
         <caption>테이블 정보</caption>
         <thead>
             <tr>
-                <td>태그이름</td>
-                <td>설명</td>
-                <td>태그이름</td>
-                <td>설명</td>
+                <th>태그이름</th>
+                <th>설명</th>
+                <th>태그이름</th>
+                <th>설명</th>
             </tr>
         </thead>
+
         <tbody>
             <tr>
                 <td>table</td>
@@ -80,7 +87,57 @@
                 <td></td>
             </tr>
         </tbody>
-       
     </table>
+
+
+    <!--
+        https://velog.velcdn.com/images/roong-ra/post/38e3a46c-f05b-4f91-94d0-dcdc37560b0a/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202021-11-16%20%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE%2011.13.12.png
+
+    -->
+    <table>
+        <caption>우도입도 총괄요금표</caption>
+        <thead>
+            <tr>
+                <th rowspan="2">구분</th>
+                <th colspan="3">우도입도 총괄요금표</th>
+            </tr>
+            <tr>
+                <th>선박요금</th>
+                <th>도립공원입장료</th>
+                <th>터미널이용료</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="text-right">
+                <th class="text-center-important">성인</th>
+                <td>2,000원</td>
+                <td>1,000원</td>
+                <td>500원</td>
+            </tr>
+            <tr>
+                <th>중학생이상</th>
+                <td class="text-right">2,000원</td>
+                <td class="text-right">800원</td>
+                <td class="text-right">300원</td>
+            </tr>
+            <tr>
+                <td class="text-center" colspan="4">🛵이륜차(오토바이, 자전거) 및 화물차량은 별도 문의</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <hr>
+
+    <style>
+        html { font-size: 17px; }
+        .exam-div { background-color: #ccc; width: 200px; height: 200px;}
+        .exam-p { background-color: #ccc; width: 200px; height: 200px; }
+    </style>
+
+    <div class="exam-div">div</div>
+
+    <hr>
+
+    <p class="exam-p">p</p>
 </body>
 </html>
