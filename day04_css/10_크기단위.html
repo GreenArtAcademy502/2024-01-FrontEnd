@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        
+        .px { width: 200px; background-color: silver; }
+        .percent { width: 50%; background-color: aqua; }
+        .percent2 { width: 50%; background-color: antiquewhite; }
+        .vw { width: 100vw; background-color: brown; }
+        .em { font-size: 1.2em; width: 2em; background-color: chartreuse; }
+    </style>
+    <title>10.크기단위</title>
+</head>
+<body>
+    <p>
+        pixel: px, 보편적으로 사용
+        percent: %, 부모 크기의 비율로 표시
+        em: 부모에 적용되어 있는 폰트 크기를 기준으로 비율로 표시 (1 == 부모 font-size)
+        rem: html태그에 적용되어 있는 폰트 크기를 비율로 표시
+        vw: viewport-width, 뷰포트 가로 크기 기준으로 비율로 표시
+        vh: viewport-height, 뷰포트 세로 크기 기준으로 비율로 표시
+    </p>
+
+    <div class="px">px</div>
+    <div class="percent">percent</div>
+    <div class="percent">d
+        <div class="percent2">percent2</div>
+    </div>
+    <div class="percent">
+        <div class="vw">vw</div>
+    </div>
+
+    <div class="em">em</div>
+    <div class="em">
+        <div class="em">
+            <div class="em">em22</div>
+        </div>
+    </div>
+</body>
+</html>

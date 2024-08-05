@@ -6,64 +6,19 @@
     <title>Document</title>
 </head>
 <body style="padding-bottom: 200px;">
-    <!-- 
-        form tag 
-        엔드유저가 작성한/선택한 내용을 백엔드로 전달
-        action: End-Point
-        method: 전달 방식(get/post)
-        input관련 엘리먼트의 name이 백엔드에서 값을 받는 멤버필드명과 같아야 한다.
-        
-    -->
-    <h3>post방식</h3>
-    <form action="http://localhost:8080/api/user/test" method="post">
-        <div>
-            <label>아이디: <input type="text" name="uid"></label>
-        </div>
-        <div>
-            <label>비밀번호: <input type="password" name="upw"></label>
-        </div>
-        <div>
-            <label>이름: <input type="text" name="nm"></label>
-        </div>
-        <div>
-            <label>프로필 사진: <input type="file" name="pic" accept="image/*"></label>
-        </div>
-        <div>
-            <input type="submit" value="전송">
-        </div>
-    </form>
-
-    <hr>
-    <h3>get방식</h3>
-    <form action="http://localhost:8080/api/user/test" method="get">
-        <div>
-            <label>아이디: <input type="text" name="uid"  required></label>
-        </div>
-        <div>
-            <label>비밀번호: <input type="password" name="upw" placeholder="비밀번호"></label>
-        </div>
-        <div>
-            <label>이름: <input type="text" name="nm"></label>
-        </div>
-        <div>
-            <label>프로필 사진: <input type="file" name="pic" accept="image/*"></label>
-        </div>
-        <div>
-            <input type="submit" value="전송">
-        </div>
-    </form>
+    
 
     <!-- label태그는 text-node 선택시 input 엘리먼트의 포커스가 on되게 할 수 있다. -->
     <h3>form 태그에서 사용할 수 있는 자식 노드</h3>
     <form action="/dddd" method="post">
         <!-- label 태그로 감싼 여부 차이-->
         <!-- tabindex는 탭 버튼 클릭시 포커스 이동되는 순서를 지정할 수 있음 -->
-        <div>아이디1: <input type="text" minlength="3" required tabindex="1"></div>
-        <div><label>아이디2: <input type="text" tabindex="3" required placeholder="특수기호 2개이상"></label></div>
+        <div>아이디: <input type="text" required minlength="3" tabindex="1"></div>
+        <div><label>아이디: <input type="text" tabindex="3" required placeholder="특수기호 2개이상"></label></div>
        
         <!-- label로 감싸줄 수 없는 상황일 때 for - id값을 연결하여 사용 -->
-        <div><label for="id-input-1">아이디3:</label></div>
-        <div><input type="text" id="id-input-1" value="ddd" tabindex="2"></div>
+        <div><label for="id-input-1">아이디:</label></div>
+        <div><input type="text" id="id-input-1" value="" tabindex="2" required></div>
        
         <div><label>넘버: <input type="number" value="10" step="5"></label></div>
 
@@ -173,64 +128,10 @@
             </label>
         </div>
 
-        <div>버튼1: <input type="button" value="button"></div>
-        <div>버튼2: <button type="button">버튼2</button></div>
-        <div>버튼3: <button>버튼3</button></div>
         <div>버튼4: <input type="submit" value="submit"></div>
-        <div>버튼5: <input type="image" width="100" src="https://t3.ftcdn.net/jpg/04/54/09/98/360_F_454099801_32LqElT2W1vgRQ6YRsp3h2IsKQxTCnaG.jpg"></div>
-            
         <div>버튼6: <input type="reset" value="reset"></div>
     </form>
 
 
-    <!-- 
-        일반 버튼은 보통 click이벤트를 binding하여 하고 싶은 작업을 연결
-    -->
-    <h3>form-tag 바깥에서의 버튼들</h3>
-    <div>버튼1: <input type="button" value="select 대전으로 바꾸기" id="id-btn-change-selected"></div>
-    <div>버튼2: <button type="button">버튼2</button></div>
-    <div>버튼3: <button>버튼3</button></div>
-    <div>버튼4: <input type="submit" value="submit"></div>
-    <div>버튼5: <input type="image" width="100" src="https://t3.ftcdn.net/jpg/04/54/09/98/360_F_454099801_32LqElT2W1vgRQ6YRsp3h2IsKQxTCnaG.jpg"></div>
-        
-    <div>버튼6: <input type="reset" value="reset"></div>
-
-    <form>
-        <div>
-            <label><input type="text" required></label>
-        </div>
-        <div>
-            <button>전송</button>
-        </div>
-    </form>
-
-    <script>
-        var $range = document.getElementById('id-range');
-        var $range_value = document.getElementById('id-span-range-value');
-
-        //클로저, 클로저 아닌 방법
-        $range.addEventListener('change', function(e) {
-            console.log(e.target.value);
-            $range_value.innerText = e.target.value;
-        });
-
-        var $idBtnChangeSelected = document.querySelector('#id-btn-change-selected');
-        $idBtnChangeSelected.addEventListener('click', e => {
-            var $selectLocation = document.querySelector('select[name=location]');
-            console.log($selectLocation);
-            var $optionArr = $selectLocation.querySelectorAll('option');
-            console.log($optionArr);
-
-            for(var i=0; i<$optionArr.length; i++) {
-                var item = $optionArr[i];
-                if(item.getAttribute('value') == '2') {
-                    //item.setAttribute('selected', true);
-                    item.selected = true;                   
-                } else {
-                    item.removeAttribute('selected');
-                }
-            }
-        });
-    </script>
 </body>
 </html>

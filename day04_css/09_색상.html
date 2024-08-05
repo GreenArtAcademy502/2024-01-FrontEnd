@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        /*
+            CSS 학습 때 중요한 부분
+            - 선택자: 속성을 적용하고 싶은 대상을 선택할 수 있어야 함.
+            - 캐스캐이딩 여부: 속성 상속이 되는 속성이 있고, 아닌 속성이 있음
+            - 우선순위: 같은 엘리먼트에 다른 속성을 적용했을 시 어느 것이 적용이 될 지 알아야 함
+
+            선택자[A] { 선택한 엘리먼트(들)에게 적용할 속성을 작성[B] }
+            A: 태그 선택자, 클래스 선택자, 아이디 선택자 등
+            B: 속성명: 속성값, ; 세미콜론으로 다른 속성과 구분
+        */
+        .test { color:blue; font-weight: 600; }
+        div { width: 200px; height: 200px;  }
+        .div-1 { background-color: aqua; }
+        
+        .div-2 { background-color: #22b9df; }
+        .div-3 { background-color:  #22b9df88; } /* #6자리(색상), 2자리(알파값) */ 
+
+        .div-4 { background-color: rgb(39, 209, 218); }
+        .div-5 { background-color: rgba(39, 209, 218, 0.35); } /* 알파값: 0~1 사이값*/
+
+        .div-6 { color: #f2f; background-color: #0A0; }
+        .div-7 { color: #ff22ff; background-color: #00AA00; }
+    </style>
+    <title>09.색상</title>
+</head>
+<body>
+    <span class="test">안녕하세요.</span>
+    <div class="div-1">1</div>
+    <div class="div-2">2</div>
+    <div class="div-3">3</div>
+    <div class="div-4">4</div>
+    <div class="div-5">5</div>
+    <div class="div-6">6</div>
+    <div class="div-7">7</div>
+</body>
+</html>
