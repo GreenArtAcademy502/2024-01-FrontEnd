@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">    
+    <title>11.선택자</title>
+    <style>
+        * { } /* 모든 태그/엘리먼트 들 */
+        
+        /* Descendant Selector (자손 선택자) header 태그 자식 중의 h1태그 선택하겠다. */
+        header h1 { color: red; } 
+        header div { font-style: italic; }
+        
+        /* 콤마는 여러 선택을 할 때 사용. section 태그에도 h1태그에도 aqua를 적용하고 싶다. */
+        section, h1 { background-color: aqua; }
+        
+        /* Child Selector (자식 선택자) */
+        section>div { font-style: italic; }
+        /* Adjacent siblings Selector  인접 형제 선택자, 앞 선택자의 바로 옆에 위치한 엘리먼트  */
+        section>div+h1 { color: blue; }
+        /* General siblings Selector 일반 형제 선택자, 앞 선택자의 바로 옆으로 같은 레벨의 위치한 모든 엘리먼트 */
+        section>div~h1 { text-decoration: underline; }
+    </style>
+</head>
+<body>
+    <h1>첫번째 h1</h1>
+    <header>
+        <div>나이쓰!!!!!(1)</div>
+        <h1>반가워요</h1>
+        <main>
+            <div>나이쓰!!!!!(2)</div>
+        </main>
+    </header>
+
+    <section>
+        <h1>반가워요2 - 1</h1>
+        <div>나이쓰!2 (3)</div>        
+        <h1>반가워요2 - 2</h1>
+        <h1>반가워요2 - 2</h1>
+        <h1>반가워요2 - 2</h1>
+        <h2>!!!!</h2>
+        <h1>반가워요2 - 2</h1>
+       
+        <div>나이쓰!! ()</div>
+        <h1>반가워요2 - 2 - 2</h1>
+        <main>
+            <div>나이쓰!3 (4)</div>
+            <h1>반가워요2 - 3</h1>
+        </main>
+        <h1>반가워요2 - 4</h1>
+    </section>
+</body>
+</html>

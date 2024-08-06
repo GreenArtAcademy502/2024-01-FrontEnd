@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>12.고급선택자(2)</title>
+   
+</head>
+<body>
+    <style>
+        /* 
+            pseudo-class selector, 의사/가상/가짜 클래스 선택자, 
+            : 콜론을 사용함
+
+            가상 요소 선택자
+            :: 콜론 2개 사용
+         */
+        div.aaa:hover { background-color: antiquewhite; }
+        div>a:hover { background-color: cadetblue; } /* 마우스 오버 */
+        
+
+        
+        a:link { color: #333; text-decoration: none; } /* link는 방문전(a태그 클릭전 상태) */
+        a:visited { color: #9571d7; }
+        a:active { color: #00ff04; }
+        a:focus { background-color: beige; }
+        input { color: red; }
+        input:focus { border-color: blue; outline: blue; border-radius: 5px; }
+        .bbb:focus-within { background-color: bisque; }
+        
+    </style>
+    <div><a href="http://www.naver.com">네이버로 이동</a></div>
+    <div class="aaa">aaa-div</div>
+    <div><a href="http://www.daum.com">다음으로 이동</a></div>
+    <div class="bbb">
+        <input type="text">
+    </div>
+
+    <hr>
+    <style>
+        /* before, after는 주로 new아이콘, best아이콘 띄울 때 사용 */
+        .pe::before {
+            content: '하하';
+            color: blue;
+        }
+
+        .pe2::after { 
+            content: '호호';
+            color: red;
+        }
+    </style>
+
+    <div>A</div>
+    <div class="pe">B</div>
+    <div class="pe2">C</div>
+    <div>D</div>
+</body>
+</html>

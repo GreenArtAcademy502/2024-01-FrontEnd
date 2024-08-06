@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>12. 고급선택자</title>
+    <style>
+        /* 속성 선택자 [속성명], [속성명=속성값] 대괄호 사용 */
+        [target="_blank"] { color: red; }
+        
+        /* ddd속성을 가지고 있는 span태그 */
+        span[ddd] { color: blue; }
+
+        /* 
+            우선순위가 같았다면 후에 적힌 속성으로 덮어쓰기 된다. 
+            (전에 적힌 속성은 사라진다.) 
+        */
+        [ddd] { color: pink; }
+        [ddd] { color: aqua; }
+
+       /* 
+        <span ddd>span 태그</span> 는 color:blue, color:aqua가 대치되는 상황에서 
+        좀 더 디테일한 선택자가 우선순위에서 이기게된다. 그래서 blue가 적용
+      */
+
+      /* attribute substring selector */ 
+      span[ggg*="wo"] { color: brown; }
+    </style>
+</head>
+<body>
+    <div><a href="" target="_blank">a태그 - 1</a></div>
+    <div><a href="" ddd>a태그 - 2</a></div>
+    <div><span ddd>span 태그</span></div>
+    <hr>
+    <div><span ggg="hello world">hello world</span></div>
+    <div><span ggg="wow">wow</span></div>
+</body>
+</html>
