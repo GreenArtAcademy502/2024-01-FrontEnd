@@ -5,11 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>12. 고급선택자</title>
     <style>
+        /* 디폴트값은 선택되지 않는다. 디폴트값이라도 지정을 했을 때만 선택이 된다. */
+        a[target="_self"] { color: pink; }
+        a[target] { font-size: 40px; }
+
         /* 속성 선택자 [속성명], [속성명=속성값] 대괄호 사용 */
         [target="_blank"] { color: red; }
         
-        /* ddd속성을 가지고 있는 span태그 */
-        span[ddd] { color: blue; }
+        /* ddd속성을 가지고 있고 cls-1 클래스값을 가지고 있는 span태그 */
+        span.cls-1[ddd] { color: blue; }
 
         /* 
             우선순위가 같았다면 후에 적힌 속성으로 덮어쓰기 된다. 
@@ -28,9 +32,10 @@
     </style>
 </head>
 <body>
+    <a href="">ddddddd</a>
     <div><a href="" target="_blank">a태그 - 1</a></div>
     <div><a href="" ddd>a태그 - 2</a></div>
-    <div><span ddd>span 태그</span></div>
+    <div><span class="cls-1" ddd>span 태그</span></div>
     <hr>
     <div><span ggg="hello world">hello world</span></div>
     <div><span ggg="wow">wow</span></div>

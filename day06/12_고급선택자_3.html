@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>12.고급선택자(3)</title>
+</head>
+<body>
+    <style>
+        ul.cls-1>li:first-child { background-color: antiquewhite; }
+        ul.cls-1>li:last-child { background-color: aqua; }
+        ul.cls-1>li:nth-child(2) { background-color: blue; }
+        ul.cls-1>li:nth-child(4) { background-color: pink; }
+        ul.cls-1>li:nth-child(2n) { color: red; }
+        ul.cls-1>li:nth-child(2n+1) { color: rgb(17, 153, 7); }
+        ul.cls-1>li:nth-last-child(2) { font-size: 2rem; }
+    </style>
+    <ul class="cls-1">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+        <li>6</li>
+        <li>7</li>
+    </ul>
+    <hr>
+    <ul class="cls-1">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+        <li>6</li>
+        <li>7</li>
+    </ul>
+
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>17.배경</title>
+</head>
+<body>
+    <style>
+        div { border: 5px dashed #ccc; width:200px; height: 200px; margin-bottom: 10px; }
+        /*
+            background-color: 색상 배경
+            background-image: 이미지 배경
+            backgorund: 축약형(색상, 이미지) 둘 다 가능
+        */
+        .cls-1 { background-color: #e87070; padding: 10px; background-clip: border-box; }
+        .cls-2 { background-color: #e87070; padding: 10px; background-clip: content-box; }
+        .cls-3 { background-color: #e87070; padding: 10px; background-clip: padding-box; }
+    </style>
+    <div class="cls-1"></div>
+    <div class="cls-2"></div>
+    <div class="cls-3"></div>
+    <hr>
+
+    <style>
+        .bg-img { background-image: url('https://i.namu.wiki/i/wIkkmg4PWBhGsCTxks9oLcDfqQ4flcFHXNjI34noTQJzax2VoIfFzr5JqZMEv9YeEssNVCkCStisLmXF2-JdBSUodod8zm9nIZ3_Jo_LhKJJrDj7p6x6zbOABb19PAPC5gB_anN8W70i2Ssd1TZoNQ.webp'); }
+        .cls-4 { background-size: contain; background-repeat: no-repeat; background-clip: border-box; }
+        .cls-5 { background-size: cover; background-position: center; }
+    </style>
+
+    <div class="cls-4 bg-img">4</div>
+    <div class="cls-5 bg-img">5</div>
+    <div class="cls-6 bg-img">6</div>
+</body>
+</html>

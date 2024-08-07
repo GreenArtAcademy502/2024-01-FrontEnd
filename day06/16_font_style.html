@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>16.font style</title>
+</head>
+<body>    
+    <style>
+        /*
+            text-decoration은 줄 긋기
+            줄 위치(overline(위), line-through(가운데), underline(아래))
+            줄 모양(기본(실선), wavy(웨이브모양), dotted(점선), dashed(긴점선))
+            줄 색상
+
+            font-weight 폰트 두께
+            font-style 폰트 모양, 폰트 기울기(italic)
+        */
+        div { border: 1px solid #ccc; margin-bottom: 10px; min-height: 100px; }
+        .cls-1 { font-size: large; }
+        .cls-1 .span-1 { text-decoration: underline wavy #ee1f1f  ; }
+        .cls-1 .span-2 { text-decoration: overline wavy; font-weight: 100; }
+        .cls-1 .span-3 { text-decoration: line-through dotted; font-style: italic; }
+    </style>
+    <div class="cls-1">
+        <span class="span-1">명령·규칙</span> 또는 처분이 헌법이나 법률에 위반되는 여부가 재판의 전제가 된 경우에는 대법원은 이를 최종적으로 심사할 권한을 가진다. 군인 또는 군무원이 아닌 국민은 대한민국의 영역안에서는 중대한 군사상 기밀·초병·초소·유독음식물공급·포로·군용물에 관한 죄중 법률이 정한 경우와 비상계엄이 선포된 경우를 제외하고는 군사법원의 재판을 받지 아니한다.
+        모든 국민은 <span class="span-2">거주·이전</span>의 자유를 가진다. 대통령이 궐위된 때 또는 대통령 당선자가 사망하거나 판결 기타의 사유로 그 자격을 상실한 때에는 60일 이내에 후임자를 선거한다.
+        <span class="span-3">정당의 목적</span>이나 활동이 민주적 기본질서에 위배될 때에는 정부는 헌법재판소에 그 해산을 제소할 수 있고, 정당은 헌법재판소의 심판에 의하여 해산된다.
+    </div>
+
+    <style>
+        .cls-2 { text-align: justify; }
+        .cls-3 { text-align: center; line-height: 100px; }
+        .cls-4 { text-align: right; }
+    </style>
+    <div class="cls-2">안녕하세요-2</div>
+    <div class="cls-3">안녕하세요-3</div>
+    <div class="cls-4">안녕하세요-4</div>
+</body>
+</html>

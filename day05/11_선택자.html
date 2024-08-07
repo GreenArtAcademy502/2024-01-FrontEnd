@@ -5,7 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">    
     <title>11.선택자</title>
     <style>
-        * { } /* 모든 태그/엘리먼트 들 */
+        * {  } /* 모든 태그/엘리먼트 들 */
+
+        /*
+            CSS Combinators
+            - descendant selector (space)
+            - child selector (>)
+            - adjacent sibling selector (+)
+            - general sibling selector (~)
+        */
         
         /* Descendant Selector (자손 선택자) header 태그 자식 중의 h1태그 선택하겠다. */
         header h1 { color: red; } 
@@ -13,11 +21,17 @@
         
         /* 콤마는 여러 선택을 할 때 사용. section 태그에도 h1태그에도 aqua를 적용하고 싶다. */
         section, h1 { background-color: aqua; }
+
+        /* 위 내용은 원래 아래처럼 작성했어야 함 */
+        section { background-color: aqua; }
+        h1 { background-color: aqua; }
         
         /* Child Selector (자식 선택자) */
         section>div { font-style: italic; }
+                
         /* Adjacent siblings Selector  인접 형제 선택자, 앞 선택자의 바로 옆에 위치한 엘리먼트  */
         section>div+h1 { color: blue; }
+        
         /* General siblings Selector 일반 형제 선택자, 앞 선택자의 바로 옆으로 같은 레벨의 위치한 모든 엘리먼트 */
         section>div~h1 { text-decoration: underline; }
     </style>
