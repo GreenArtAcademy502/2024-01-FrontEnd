@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>19.Display</title>
+</head>
+<body>
+    <style>
+        .cls-1, .cls-2 { margin-bottom: 30px; }
+        .cls-1>div, .cls-2>span, .cls-3>span { border: 1px solid #ccc; }
+        .cls-1>div { width: 200px; height:50px; }
+        /* span태그는 display:inline; 이라서 width, height가 적용되지 않는다. */ 
+        .cls-2>span { width: 200px; height:50px; } 
+
+        /* display: inline-block; 는 inline의 특징과 block의 특징을 둘 다 가지고 있다. */
+        .cls-3>span { display: inline-block; width: 200px; height:50px; } 
+        .cls-4 { text-align: center; } /* 이미지도 텍스트로 처리함 */
+    </style>
+    <div class="cls-1">
+        <div>div-안녕하세요.</div>
+        <div>div-안녕하세요.</div>
+    </div>
+    <div class="cls-2">
+        <span>span-안녕하세요.</span>
+        <span>span-안녕하세요.</span>
+    </div>
+    <div class="cls-3">
+        <span>span-안녕하세요.</span>
+        <span>span-안녕하세요.</span>
+    </div>
+    <div class="cls-4">
+        <img src="https://via.placeholder.com/200x100">
+        <img src="https://via.placeholder.com/100x100">
+    </div>
+
+    <hr>
+    <style>
+        .cls-5, .cls-6, .cls-7 { background-color: aliceblue; }
+        
+        .cls-5>span:first-child { display: none; }
+        .cls-6>span:first-child { visibility: hidden; }
+        .cls-7>span:first-child { opacity: 0; }
+
+    </style>
+    <div class="cls-5">
+        <span>display-none</span>
+        <span>22222</span>
+    </div>
+    <div class="cls-6">
+        <span>visibility-hidden</span>
+        <span>22222</span>
+    </div>
+    <div class="cls-7">
+        <span>opacity-1</span>
+        <span>22222</span>
+    </div>
+    <hr>
+    <style>
+        /* 
+            overflow는 부모크기보다 컨텐츠가 더 클 때 컨텐츠가 부모를 벗어나게 될 때 어떻게 처리를 할지 결정
+            auto: if 컨텐츠 > 부모 = 변화없음 else = 스크롤바가 생김
+            hidden: 벗어난 부분을 표시하지 않는다.
+            scroll: 스크롤바가 생김
+            visible: 디폴트값, 컨텐츠가 부모를 벗어나더라도 표시
+         */
+        .cls-8 { width: 100px; height: 100px; background-color: antiquewhite; overflow: scroll; }
+    </style>
+    <div class="cls-8">
+        아무거나 작성을 좀 해주세요.
+        아무거나 작성을 좀 해주세요.
+        아무거나 작성을 좀 해주세요.
+        아무거나 작성을 좀 해주세요.
+    </div>
+</body>
+</html>

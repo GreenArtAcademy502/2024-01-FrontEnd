@@ -37,26 +37,30 @@
         <div class="swiper-scrollbar"></div>
     </div>
 
-    <script>
+    <script>        
+        /*
+            new Swiper(1, 2);
+            1인자: swiper태그들의 부모 지정
+        */
         const swiper = new Swiper('.swiper', {
             // Optional parameters
-            direction: 'horizontal',
-            loop: false,
+            direction: 'horizontal', //slide 방향
+            loop: false, //무한 slide 여부
 
-            // If we need pagination
+            // If we need pagination, 페이지네이션(페이징 숫자가 아닌 동그란 점) 표시
             pagination: {
-                el: '.swiper-pagination',
+                el: '.swiper-pagination', //페이지네이션이 표시될 element지정
             },
 
-            // Navigation arrows
+            // Navigation arrows, 화살표 표시
             navigation: {
-                nextEl: '.swiper-button-next',
-                prevEl: '.swiper-button-prev',
+                nextEl: '.swiper-button-next', //다음 element지정
+                prevEl: '.swiper-button-prev', //이전 element지정
             },
 
-            // And if we need scrollbar
+            // And if we need scrollbar, 스크롤바 표시
             scrollbar: {
-                el: '.swiper-scrollbar',
+                el: '.swiper-scrollbar', //스크롤바가 표시될 element지정
             },
         });
     </script>

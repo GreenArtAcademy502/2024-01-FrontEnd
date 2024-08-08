@@ -7,13 +7,20 @@
 </head>
 <body>
     <style>
+        /* 
+            pseudo-class selector - 구조선택자
+            같은 부모를 두고있는 그룹에서 선택된다.
+        */
+        /* ul.cls-1>li:not(:last-child) { margin-bottom: 5px; } */
+        ul.cls-1>li:not(:first-child) { margin-top: 10px; }
         ul.cls-1>li:first-child { background-color: antiquewhite; }
         ul.cls-1>li:last-child { background-color: aqua; }
         ul.cls-1>li:nth-child(2) { background-color: blue; }
         ul.cls-1>li:nth-child(4) { background-color: pink; }
-        ul.cls-1>li:nth-child(2n) { color: red; }
-        ul.cls-1>li:nth-child(2n+1) { color: rgb(17, 153, 7); }
-        ul.cls-1>li:nth-last-child(2) { font-size: 2rem; }
+        ul.cls-1>li:nth-child(2n) { color: red; } /* 순번이 짝수인 자식들, n자리에 0~인피니티 숫자를 대입했을 때 나오는 숫자에 적용 */
+        ul.cls-1>li:nth-child(2n+1) { color: rgb(17, 153, 7); } /* 순번이 홀수인 자식들 */
+        ul.cls-1>li:nth-last-child(2) { font-size: 2rem; } /* 순서가 reverse */
+        ul.cls-1>li:not(:nth-child(3)) { border: 3px dotted red; }
     </style>
     <ul class="cls-1">
         <li>1</li>

@@ -5,11 +5,50 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
+        /*
+            선택자에 따른 우선순위 점수가 반영이 된다. 
+            그 점수에 우선순위가 결정이 된다.
+            예를들어
+            전체선택자, 부정선택자(not): 0점
+            태그선택자: 1점
+            클래스선택자: 10점
+            아이디선택자: 100점
+            인라인: 1,000점
+            !important: 무한대
+
+            만약에 점수가 같다면 후에 로드한 내용이 적용이 된다.
+
+            .list li.item >> 10 + 1 + 10 = 21점
+            .list>li.item >> 
+        */
         #id-1>#id-2>#id-3>#id-4>#id-5>#id-6>#id-7>#id-8>#id-9>#id-10>#id-11>div { color: blue; }
         #id-1>#id-2 div { color: red; }
+
+        /* 
+            Combinator Selector는 점수 반영이 되지 않는다.
+            만약에 점수반영이 되었다면 "반가워요" 두개의 li는
+            폰트색상이 파란색이었을 것이다.
+        */
+        .list>li.item { color:blue; }
+        .list li.item { color:red; }
     </style>
 </head>
 <body>
+    <ul class="list">
+        <li class="item">
+            <div>반가워요</div>
+        </li>
+        <li class="item">
+            <div>반가워요</div>
+        </li>
+        <li>
+            <div>반가워요</div>
+        </li>
+        <li>
+            <div>반가워요</div>
+        </li>
+    </ul>
+
     <div id="id-1">
         <div id="id-2">
             <div id="id-3">

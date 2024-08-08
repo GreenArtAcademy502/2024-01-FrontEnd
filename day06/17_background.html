@@ -13,23 +13,36 @@
             background-image: 이미지 배경
             backgorund: 축약형(색상, 이미지) 둘 다 가능
         */
+        .cls-01 { background-color: #e8707077; padding: 10px; background-clip: border-box; }
+        .cls-02 { background-color: #e87070; opacity: .5; padding: 10px; background-clip: border-box; }
         .cls-1 { background-color: #e87070; padding: 10px; background-clip: border-box; }
         .cls-2 { background-color: #e87070; padding: 10px; background-clip: content-box; }
         .cls-3 { background-color: #e87070; padding: 10px; background-clip: padding-box; }
     </style>
-    <div class="cls-1"></div>
-    <div class="cls-2"></div>
-    <div class="cls-3"></div>
+    <div class="cls-01">01</div>
+    <div class="cls-02">02</div>
+    <div class="cls-1">1</div>
+    <div class="cls-2">2</div>
+    <div class="cls-3">3</div>
     <hr>
 
     <style>
         .bg-img { background-image: url('https://i.namu.wiki/i/wIkkmg4PWBhGsCTxks9oLcDfqQ4flcFHXNjI34noTQJzax2VoIfFzr5JqZMEv9YeEssNVCkCStisLmXF2-JdBSUodod8zm9nIZ3_Jo_LhKJJrDj7p6x6zbOABb19PAPC5gB_anN8W70i2Ssd1TZoNQ.webp'); }
-        .cls-4 { background-size: contain; background-repeat: no-repeat; background-clip: border-box; }
+        .cls-4 { background-size: contain; background-repeat: no-repeat; background-position: 0 10%; }
         .cls-5 { background-size: cover; background-position: center; }
+        .cls-6 { background-position: 100% 20%; }
     </style>
 
     <div class="cls-4 bg-img">4</div>
     <div class="cls-5 bg-img">5</div>
     <div class="cls-6 bg-img">6</div>
+
+    <hr>
+
+    <style>
+        .cls-7 { width: auto; height: 2000px; background-attachment: fixed; }
+    </style>
+    <div class="cls-7 bg-img"></div>
+    <div class="cls-7">dddddd</div>
 </body>
 </html>
