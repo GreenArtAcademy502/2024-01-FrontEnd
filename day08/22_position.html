@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>22. position (중요)</title>
+</head>
+<body>
+    <style>
+        /*
+            position의 디폴트값은 static
+            엘리먼트 위치조정 속성 top, right, bottom, left가 있음.
+            static은 위치조정 속성 적용이 안 됨 (static만 아니면 된다.)
+
+            위치조정 없이 position만 relative로 바꾸게 되면 static과 
+            위치가 같다.
+
+            위치조정은 좌우값 중 1개, 상하값 중 1개씩만 적용하면 된다. 
+            (둘 중 하나만 주어도 된다. )
+            좌값, 우값 둘다 주게되면 그만큼의 width 크기가 된다. (상하도 마찬가지)
+
+            relative는 기본위치(static이었을 때 위치)에서 
+            위치조정 속성값만큼 멀어진다.
+
+            relative는 static과 비슷하다. 다만 위치조정이 가능해진다.
+        */
+        div { border: 1px solid #ccc; margin: 5px; }
+        .cls-1>div:nth-child(2) { left: 10px; position: static; }
+        .cls-1>.p-relative-1 { position: relative; }
+        .cls-1>.p-relative-2 { left: 10px; position: relative; }
+        .cls-1>.p-relative-3 { left: 10px; top: 30px; position: relative; }
+        .cls-1>.p-relative-4 { left: -10px; top: -30px; position: relative; }
+    </style>
+    <div class="cls-1">
+        <div class="p-static-1">static-1</div>
+        <div class="p-static-2">static-2</div>
+        <div class="p-relative-1">relative-1</div>
+        <div class="p-relative-2">relative-2</div>
+        <div class="p-relative-3">relative-3</div>
+        <div class="p-relative-4">relative-4</div>
+    </div>
+</body>
+</html>

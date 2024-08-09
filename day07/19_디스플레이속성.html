@@ -11,7 +11,7 @@
         .cls-1>div, .cls-2>span, .cls-3>span { border: 1px solid #ccc; }
         .cls-1>div { width: 200px; height:50px; }
         /* span태그는 display:inline; 이라서 width, height가 적용되지 않는다. */ 
-        .cls-2>span { width: 200px; height:50px; } 
+        .cls-2>span { width: 200px; height: 50px; } 
 
         /* display: inline-block; 는 inline의 특징과 block의 특징을 둘 다 가지고 있다. */
         .cls-3>span { display: inline-block; width: 200px; height:50px; } 
@@ -36,11 +36,11 @@
 
     <hr>
     <style>
-        .cls-5, .cls-6, .cls-7 { background-color: aliceblue; }
+        .cls-5, .cls-6, .cls-7 { background-color: aliceblue; margin-bottom: 10px; }
         
         .cls-5>span:first-child { display: none; }
         .cls-6>span:first-child { visibility: hidden; }
-        .cls-7>span:first-child { opacity: 0; }
+        .cls-7>span:first-child { opacity: 0.2; }
 
     </style>
     <div class="cls-5">
@@ -59,14 +59,40 @@
     <style>
         /* 
             overflow는 부모크기보다 컨텐츠가 더 클 때 컨텐츠가 부모를 벗어나게 될 때 어떻게 처리를 할지 결정
-            auto: if 컨텐츠 > 부모 = 변화없음 else = 스크롤바가 생김
+            auto: if 컨텐츠 < 부모 = 변화없음 else = 스크롤바가 생김
             hidden: 벗어난 부분을 표시하지 않는다.
             scroll: 스크롤바가 생김
             visible: 디폴트값, 컨텐츠가 부모를 벗어나더라도 표시
          */
-        .cls-8 { width: 100px; height: 100px; background-color: antiquewhite; overflow: scroll; }
+        .cls-8, .cls-9, .cls-10, .cls-11 { 
+            width: 100px; height: 100px; 
+            background-color: antiquewhite; 
+            margin-bottom: 10px; 
+        }
+        .cls-8 { overflow: scroll; }
+        .cls-9 { overflow: auto; }
+        .cls-10 { overflow: auto; }
+        .cls-11 { overflow: hidden; }
     </style>
     <div class="cls-8">
+        아무거나 작성을 좀 해주세요.
+        아무거나 작성을 좀 해주세요.
+        아무거나 작성을 좀 해주세요.
+        아무거나 작성을 좀 해주세요.
+    </div>
+
+    <div class="cls-9">
+        auto 아무거나 작성을 좀 해주세요.        
+    </div>
+
+    <div class="cls-10">
+        auto 아무거나 작성을 좀 해주세요.
+        아무거나 작성을 좀 해주세요.
+        아무거나 작성을 좀 해주세요.
+        아무거나 작성을 좀 해주세요.       
+    </div>
+
+    <div class="cls-11">
         아무거나 작성을 좀 해주세요.
         아무거나 작성을 좀 해주세요.
         아무거나 작성을 좀 해주세요.

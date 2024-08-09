@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        /*
+            margin - 경계선 바깥
+            border - 엘리먼트 경계선
+            padding - 경계선 안쪽
+            content - 내용        
+        */        
+        .cls-1>div { border: 1px solid #ccc; }
+        .cls-1>div:first-child { margin-left: 30px;}
+        .cls-1>div:nth-child(2) { padding-left: 30px; }
+    </style>    
+    <div class="cls-1">
+        <div>안녕하세요</div>
+        <div>안녕하세요</div>
+    </div>
+    
+    <hr>
+
+    <style>
+        .cls-2>div { border: 1px solid #ccc; }
+        .cls-2>div:nth-child(2) { margin: 10px; } /* 4면 10px 마진값 적용 */
+        .cls-2>div:nth-child(3) { padding: 10px; } /* 4면 10px 마진값 적용 */
+        .cls-2>div:nth-child(4) { padding: 10px 30px; } /* 10px(위, 아래), 30px(좌, 우) */
+        .cls-2>div:nth-child(5) { padding: 10px 30px 50px; } /* 10px(위), 30px(좌, 우), 50px(아래) */
+        .cls-2>div:nth-child(6) { padding: 10px 30px 50px 70px; } /* 10px(위), 30px(우), 50px(아래), 70px(좌) */
+        .cls-2>div:nth-child(7) { padding-left: 30px; } /* padding 왼쪽 */
+        .cls-2>div:nth-child(8) { margin-right: 30px; margin-top: 20px; } /* margin 우, 위 */
+        .cls-2>div:nth-child(9) { margin: 20px 30px 0 0; } /* margin 우, 위 - 0은 단위를 붙이지 않는다. */
+
+    </style>
+    <div class="cls-2">
+        <div>안녕하세요.1</div>
+        <div>안녕하세요.2</div>
+        <div>안녕하세요.안녕하세요.안녕하세요.안녕하세요. 안 녕 하 세 요 . 3</div>
+        <div>안녕하세요.안녕하세요.안녕하세요.안녕하세요. 안 녕 하 세 요 . 4</div>
+        <div>안녕하세요.안녕하세요.안녕하세요.안녕하세요. 안 녕 하 세 요 . 5</div>
+        <div>안녕하세요.안녕하세요.안녕하세요.안녕하세요. 안 녕 하 세 요 . 6</div>
+        <div>안녕하세요.안녕하세요.안녕하세요.안녕하세요. 안 녕 하 세 요 . 7</div>
+        <div>안녕하세요.안녕하세요.안녕하세요.안녕하세요. 안 녕 하 세 요 . 8</div>
+        <div>안녕하세요.안녕하세요.안녕하세요.안녕하세요. 안 녕 하 세 요 . 9</div>
+    </div>
+
+    <hr>
+
+    <style>
+        
+        
+        .cls-3>div { border: 1px solid #ccc; }
+        .cls-3>div:first-child { width: 100px; height: 100px; }
+        .cls-3>div:nth-child(2) { width: 100px; height: 100px; padding: 20px; }
+        /* border 1px * 2, padding 20px * 2 = 42를 빼줘야 함 */
+        .cls-3>div:nth-child(3) { width: 58px; height: 58px; padding: 20px; }
+        .cls-3>div:nth-child(4) { box-sizing: border-box; width: 100px; height: 100px; padding: 20px; }
+        /*
+            기본적으로 width, height는 content 크기를 지정
+            box-sizing 기본값이 content-box이기 때문
+            box-sizing 값을 border-box로 변경하면 width,height는 border크기 기준으로 된다.        
+            * { box-sizing: border-box;  } 이 속성을 무조건 주는 것이 좋다.
+        */
+    </style>
+    <div class="cls-3">
+        <div>1.안녕하세요. 실제크기 101x101</div>
+        <div>2.안녕하세요. 실제크기  141x141</div>
+        <div>3. 1번크기와 맞춤.</div>
+        <div>4. 1번크기와 맞춤.</div>
+    </div>
+</body>
+</html>

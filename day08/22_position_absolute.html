@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>22. position_absolute</title>
+</head>
+<body>
+    <style>
+        /*
+           absolute는 가장 먼저 position: static이 아닌 부모를 찾습니다.
+           그리고 그 부모가 기준이 된다. 그런 부모가 없다면 body가 부모가 됨.
+
+           relative는 자신이 원래 있던 위치에서 조정
+           absolute는 부모 좌측상단 기준에서 조정
+        */
+        div { border: 1px solid #ccc; margin: 5px; }
+        .cls-0 { height: 50px; background-color: aliceblue; }
+        .cls-1 { position: relative; }
+        .cls-1 .p-relative-1 { position: relative; left: 20px; top: 50px; }
+        .cls-1 .p-absolute-1 { position: absolute; left: 20px; top: 50px; }
+    </style>
+    <div class="cls-0"></div>
+    <div class="cls-1">
+        <div class="p-static-1">static-1</div>        
+        <div class="p-relative-1">relative-1</div>        
+        <div class="p-absolute-1">absolute-1</div>
+    </div>
+
+ 
+    <style>
+        .cls-2 { margin-top: 100px; position: relative; left: 30px; }        
+        .cls-2 .p-relative-1 { position: relative; left: 20px; top: 50px; }
+        .cls-2 .p-absolute-1 { position: absolute; left: 20px; top: 50px; }
+    </style>
+
+    <div class="cls-2">
+        <div class="p-static-1">static-1-1</div>        
+        <div class="p-relative-1">relative-1-1</div>        
+        <div class="p-absolute-1">absolute-1-1</div>
+    </div>
+</body>
+</html>
