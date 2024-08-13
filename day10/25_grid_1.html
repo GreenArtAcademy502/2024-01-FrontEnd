@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>25.grid(1)</title>
+</head>
+<body>
+    <style>
+        .container { border: 2px solid #000; background-color: yellow; display: grid; margin-bottom: 10px; }
+        .container>div { margin: 5px; border: 2px solid #111; padding: 5px; }
+
+        .c1 { grid-template-columns: 70px 70px 70px; grid-template-rows: 100px 100px 100px;}
+    </style>
+    <span>c1</span>
+    <div class="container c1">
+        <div>item 1</div>
+        <div>item 2</div>
+        <div>item 3</div>
+        <div>item 4</div>
+        <div>item 5</div>
+    </div>
+
+    <style>
+        .c2 { grid-template-columns: 100px 100px; grid-template-rows: auto 100px auto 150px; }
+    </style>
+    <span>c2</span>
+    <div class="container c2">
+        <div>item 1</div>
+        <div>item 2</div>
+        <div>item 3</div>
+        <div>item 4</div>
+        <div>item 5</div>
+        <div>item 5</div>
+        <div>item 5</div>
+        <div>item 5</div>
+        <div>item 5</div>
+    </div>
+
+    <style>
+        /* 
+            fr(fraction)은 크기 비율(실수값도 사용 가능)
+            1fr 1fr 1fr은 1/3씩 크기를 나눈다. 
+            1fr 1fr 100px은 100px보장해주고 남는 공간 1/2씩 크기를 나눈다.
+            (단위는 섞어서 사용 가능)
+            grid-template-rows에서 fr을 사용하려면 height값을 지정해주어야 함
+        */
+        .c3 { height: 400px; grid-template-columns: 1fr 1fr 100px; grid-template-rows: 1fr 1fr 1fr;}
+    </style>
+    <span>c3</span>
+    <div class="container c3">
+        <div>item 1</div>
+        <div>item 2</div>
+        <div>item 3</div>
+        <div>item 4</div>
+        <div>item 5</div>
+        <div>item 5</div>
+        <div>item 5</div>
+        <div>item 5</div>
+        <div>item 5</div>
+    </div>
+
+
+    <style>        
+    /*
+        같은 값 반복은 repeat함수를 사용하여 처리
+    */
+        .c4 { 
+            grid-template-columns: repeat(3, 1fr);
+            /*
+                grid-template-rows: 100px 1fr 100px 1fr;
+                위 처럼 속성값을 처리하고 싶었으면 아래처럼 작성
+            */
+            grid-template-rows: repeat(2, 100px 1fr);
+         }
+    </style>
+    <span>c4</span>
+    <div class="container c4">
+        <div>item 1</div>
+        <div>item 2</div>
+        <div>item 3</div>
+        <div>item 4</div>
+        <div>item 5</div>
+        <div>item 5</div>
+        <div>item 5</div>
+        <div>item 5</div>
+        <div>item 5</div>
+    </div>
+
+    <style>        
+        /* min, max값 사용 */
+        .c5 { 
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(3, minmax(100px, auto));
+         }    
+    </style>
+    <span>c5</span>
+    <div class="container c5">
+        <div>item 1</div>
+        <div>item 2</div>
+        <div>item 3</div>
+        <div>item 4</div>
+        <div>item 5</div>
+        <div>item 5</div>
+        <div>item 5</div>
+        <div>item 5</div>
+        <div>item 5item 5item 5item 5item 5item 5</div>
+    </div>
+
+
+    <style>        
+        /* 
+            auto-fill, auto-fit 값 사용
+            개수를 미리 정하지 않고 설정된 너비가 허용하는 한 최대한 셀을 채운다.
+            둘은 동일하나 다만 한줄에서 아이템 갯수가 모자라서 여백이 발생하였을 때 차이가 
+            생긴다. fit은 여백은 채우려고 한다.
+
+            gap은 아이템끼리의 간격 조정 인자1개(4면), 인자2개(row-gap, column-gap)
+         */
+        .c6 { grid-template-columns: repeat(auto-fill, minmax(20%, auto)); gap: 30px 10px; }    
+        .c7 { grid-template-columns: repeat(auto-fit, minmax(20%, auto)); row-gap: 30px; column-gap: 10px; }    
+    </style>
+    <span>c6</span>
+    <div class="container c6">
+        <div>item 1</div>
+        <div>item 2</div>
+        <div>item 3</div>
+        <div>item 4</div>
+        <div>item 4</div>
+        <div>item 4</div>
+        <div>item 4</div>
+        <div>item 4</div>
+        <div>item 4</div>
+        <div>item 4</div>
+        <div>item 4</div>
+        <div>item 4</div>
+        <div>item 4</div>
+        
+    </div>
+    <div class="container c7">
+        <div>item 1</div>
+        <div>item 2</div>
+        <div>item 3</div>
+        <div>item 4</div>
+        <div>item 4</div>
+        <div>item 4</div>
+        <div>item 4</div>
+    </div>
+
+
+    <style>        
+        .c8 {
+            /* grid-template의 적용 범위를 벗어난 것들의 속성 지정 template을 auto로 변경*/
+            grid-template-columns: 100px 100px;
+            grid-template-rows: 100px 100px;
+            grid-auto-rows: 10px;
+         }
+    </style>
+    <span>c8</span>
+    <div class="container c8">
+        <div>item 1</div>
+        <div>item 2</div>
+        <div>item 3</div>
+        <div>item 4</div>
+        <div>item 4</div>
+        <div>item 4</div>
+        <div>item 4</div>
+        <div>item 4</div>
+        <div>item 4</div>
+        <div>item 4</div>
+        <div>item 4</div>
+        <div>item 4</div>
+        <div>item 4</div>
+        
+    </div>
+</body>
+</html>
