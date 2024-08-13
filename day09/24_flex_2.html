@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>24.flex</title>
+    <style>
+        /* 
+            main axis속성값 중 space-로 시작하는 속성값이 있다. 
+        */
+        .container { 
+            display: flex; background-color: beige; 
+            height: 100px; margin-bottom: 10px;             
+        }
+        .container > div { border: 1px solid #ccc; }
+        .space-around { justify-content: space-around; } /* 아이템 양쪽 여백이 모두 동일, 겹치는 부분은 여백이 2배가 된다. */
+        .space-between { justify-content: space-between; } /* 첫번째, 마지막 자식은 끝에 붙는다. 여백은 동일 */
+        .space-evenly { justify-content: space-evenly; } /* 모든 여백이 항상 균일 */
+        
+    
+    </style>
+</head>
+<body>
+    <div>space-around</div>
+    <div class="container space-around">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+    </div>
+
+    <div>space-between</div>
+    <div class="container space-between">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+    </div>
+
+    <div>space-evenly</div>
+    <div class="container space-evenly">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>3</div>
+        <div>3</div>
+    </div>
+    
+ 
+</body>
+</html>

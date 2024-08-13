@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>24.flex</title>
+    <style>
+        /* 
+            flex는 부모가 필요, 자식들을 컨트롤 함
+            방향: row 가로방향(왼>오, 오>왼), column 세로방향(위>아래, 아래>위)
+            디폴트방향: row 가로방향(왼>오)
+
+            메인방향축 (main axis), 크로스방향축(cross axis)
+            [메인]    [크로스]
+            왼>오     위>아래
+            오>왼     위>아래
+            위>아래   왼>오
+            아래>위   왼>오 
+
+            메인방향축 컨트롤 속성: justify-content
+            크로스방향축 컨트롤 속성: align-items
+        */
+        .container { display: flex; background-color: beige; height: 100px; margin-bottom: 10px; }
+        .container > div { border: 1px solid #ccc; }
+        
+        .direction-row-reverse { flex-direction: row-reverse; } /* row 가로방향 (오>왼) */
+        .direction-column { flex-direction: column; } /* column 세로방향(위>아래) */
+        .direction-column-reverse { flex-direction: column-reverse; }
+
+        /* justify-content(메인방향): start(기본값) or flex-start, end or flex-end, center */
+        .justify-content-start { justify-content: start; }
+        .justify-content-end { justify-content: end; }
+        .justify-content-center { justify-content: center; }
+
+        /* align-items(크로스방향): start, end, center, stretch(기본값) */
+        .align-item-start { align-items: start; }
+        .align-item-end { align-items: end; }
+        .align-item-center { align-items: center; }
+
+
+    </style>
+</head>
+<body>
+    <div>flex-direction: row</div>
+    <div class="container">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+    </div>
+    
+    <span>justify-content-start(기본값)</span>
+    <div class="container justify-content-start">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+    </div>
+    
+    <span>justify-content-end</span>
+    <div class="container justify-content-end">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+    </div>
+
+
+    <span>justify-content-center</span>
+    <div class="container justify-content-center">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+    </div>
+    
+    <hr>
+
+    <div>flex-direction: row-reverse</div>
+    <div class="container direction-row-reverse">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+    </div>
+    
+    <span>align-items-start</span>
+    <div class="container direction-row-reverse align-item-start">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+    </div>
+
+    <span>align-items-end</span>
+    <div class="container direction-row-reverse align-item-end">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+    </div>
+
+    <span>align-items-center</span>
+    <div class="container direction-row-reverse align-item-center">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+    </div>
+
+    <hr>
+
+    <div>flex-direction: column</div>
+    <div class="container direction-column">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+    </div>
+
+    <div>justify-content-end</div>
+    <div class="container direction-column justify-content-end">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+    </div>
+
+    <div>justify-content-center</div>
+    <div class="container direction-column justify-content-center">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+    </div>
+
+    <div>flex-direction: column-reverse</div>
+    <div class="container direction-column-reverse">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+    </div>
+
+
+    <hr>
+    <span>123정중앙</span>
+    <div class="container justify-content-center align-item-center">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+    </div>
+
+
+    <pre>
+        정중앙
+        1
+        2
+        3
+    </pre>
+    <div class="container direction-column justify-content-center align-item-center">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+    </div>
+</body>
+</html>

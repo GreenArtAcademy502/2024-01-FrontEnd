@@ -8,17 +8,18 @@
 <body>
     <style>
         /*
-           absolute는 가장 먼저 position: static이 아닌 부모를 찾습니다.
-           그리고 그 부모가 기준이 된다. 그런 부모가 없다면 body가 부모가 됨.
+            position:static이 아닌 부모가 필요함
+            absolute는 자신을 감싸고 있는 부모 중 가장 가까운 position: static이 아닌 부모를 찾는다.
+            그리고 그 부모가 기준이 된다. 그런 부모가 없다면 body가 부모가 됨.
 
-           relative는 자신이 원래 있던 위치에서 조정
-           absolute는 부모 좌측상단 기준에서 조정
+            relative는 자신이 원래 있던 위치에서 조정
+            absolute는 부모 좌측상단 기준에서 조정
         */
         div { border: 1px solid #ccc; margin: 5px; }
         .cls-0 { height: 50px; background-color: aliceblue; }
         .cls-1 { position: relative; }
         .cls-1 .p-relative-1 { position: relative; left: 20px; top: 50px; }
-        .cls-1 .p-absolute-1 { position: absolute; left: 20px; top: 50px; }
+        .cls-1 .p-absolute-1 { position: absolute; left: 20px; top: 50px; right:20px; }
     </style>
     <div class="cls-0"></div>
     <div class="cls-1">

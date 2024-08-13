@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>23.Position 응용</title>
+    <style>
+        .slidewrapper { 
+            width: 600px; height: 400px; background-color: #ebebeb; 
+            position: relative; 
+            margin: 0 auto;
+        }
+        .btn { 
+            background-color: #000; padding: 0 20px; line-height: 50px; 
+            text-decoration: none; color: #fff; display: inline-block;
+            position: absolute; top: calc(50% - 25px);
+            /* margin-top: -25px; */
+        }
+        .prev { /* left: -79px; */ right: calc(100% + 5px); }
+        .next { /*right: -79px; */ left: calc(100% + 2px); }
+    </style>
+</head>
+<body>
+    <h1>Posiiton exercise</h1>
+
+    <div class="slidewrapper">
+        <h2>slide contents</h2>
+        <a href="" class="btn prev">PREV</a>
+        <a href="" class="btn next">NEXT</a>
+    </div>
+</body>
+</html>

@@ -7,7 +7,9 @@
 </head>
 <body>
     <style>
+            
         /*
+            position: static, relative, absolute, fixed, sticky
             position의 디폴트값은 static
             엘리먼트 위치조정 속성 top, right, bottom, left가 있음.
             static은 위치조정 속성 적용이 안 됨 (static만 아니면 된다.)
@@ -22,10 +24,11 @@
             relative는 기본위치(static이었을 때 위치)에서 
             위치조정 속성값만큼 멀어진다.
 
-            relative는 static과 비슷하다. 다만 위치조정이 가능해진다.
+            relative는 static과 비슷하다. 다만 위치조정이 가능해진다. 
+            원래 있던 위치에서 조정
         */
         div { border: 1px solid #ccc; margin: 5px; }
-        .cls-1>div:nth-child(2) { left: 10px; position: static; }
+        .cls-1>.p-static-2 { left: 10px; position: static; }
         .cls-1>.p-relative-1 { position: relative; }
         .cls-1>.p-relative-2 { left: 10px; position: relative; }
         .cls-1>.p-relative-3 { left: 10px; top: 30px; position: relative; }

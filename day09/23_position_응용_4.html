@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>23.position 응용(3)</title>
+    <style>
+        * { margin:0; padding: 0; }
+        html { scroll-behavior: smooth; }
+        .mainmenu {  background-color: #333; padding-left: 40px; }
+        .mainmenu::after { content: ''; display: block; clear: both; }
+        
+        .mainmenu ul { background-color: #666; display: none; position: absolute; top: 100%; left: 0; }        
+        .mainmenu > li { cursor: pointer; float: left; 
+                        list-style-type: none; margin-right: 30px; 
+                        line-height: 35px; color: #fff; 
+                        position: relative;
+        }
+        .mainmenu > li ul li { padding: 0 10px; white-space: nowrap; list-style-type: none; }
+        .mainmenu > li:hover ul { display: block; }
+        .container { height: 3000px; }
+        .back_to_top { 
+            padding: 10px 20px; background-color: #444; 
+            color: #fff; font-weight: bold; text-transform: uppercase;
+            text-decoration: none;
+            position: fixed; right: 50px; bottom: 50px;
+        }
+    </style>
+</head>
+<body>
+    <ul class="mainmenu" id="id-top">
+        <li>
+            About Us
+            <ul>
+                <li>ceo greeting</li>
+                <li>history</li>
+                <li>vision</li>
+            </ul>
+        </li>
+        <li>
+            Works
+            <ul>
+                <li>Design</li>
+                <li>Mobile</li>
+            </ul>
+        </li>
+        <li>Service</li>
+        <li>Location</li>
+    </ul>
+    <div class="container">
+        내용이 들어감sadfdassadfasfd
+        내용이 들어감sadfdassadfasfd
+    </div>
+    <a href="#id-top" class="back_to_top">Top</a>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>23.position 응용(3)</title>
+    <style>
+        * { margin:0; padding: 0; }
+        .mainmenu {  background-color: #333; padding-left: 40px; }
+        .mainmenu::after { content: ''; display: block; clear: both; }
+        
+        .mainmenu ul { background-color: #666; display:none; position: absolute; top: 100%; left: -12px; }        
+        .mainmenu > li { cursor: pointer; float: left; 
+                        list-style-type: none; margin-right: 30px; 
+                        line-height: 35px; color: #fff; 
+                        position: relative;
+        }
+        .mainmenu > li ul li { padding: 0 10px; white-space: nowrap; list-style-type: none; }
+        .mainmenu > li:hover ul { display: block; }
+    </style>
+</head>
+<body>
+    <ul class="mainmenu">
+        <li>
+            About Us
+            <ul>
+                <li>ceo greeting</li>
+                <li>history</li>
+                <li>vision</li>
+            </ul>
+        </li>
+        <li>
+            Works
+            <ul>
+                <li>Design</li>
+                <li>Mobile</li>
+            </ul>
+        </li>
+        <li>Service</li>
+        <li>Location</li>
+    </ul>    
+</body>
+</html>

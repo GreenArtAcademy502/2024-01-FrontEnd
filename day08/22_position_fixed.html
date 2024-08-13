@@ -9,15 +9,16 @@
     <style>
         /*
         position-fixed를 사용하실 땐 위치 조정값을 줘야한다. 
-        viewport에 고정이 된다. 
+        viewport에 고정이 된다. absolute랑 비슷하다 부모는 무조건 viewport가 된다. 
         */
         body { margin: 0; }
         .fixed { height: 60px; background-color: beige; position: fixed; top:0; left:0; right: 0;}
         .cls-1 { margin-top: 60px; height: 2000px; }
         /* position-sticky를 사용하실 땐 붙을 위치 조정값을 줘야한다.  */ 
-        .sticky { height: 50px; background-color: burlywood; margin-top: 100px; position: sticky; top: 20px; }
+        .sticky { height: 50px; background-color: burlywood; margin-top: 100px; position: sticky; top: 0; }
     </style>
     <div class="fixed">fixed</div>
+
     <div class="cls-1">
         div.cls-1        
         <div class="sticky">sticky</div>

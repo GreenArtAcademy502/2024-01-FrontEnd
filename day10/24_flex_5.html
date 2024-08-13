@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>24. flex_wrap (5)</title>
+</head>
+<body>
+    <style>
+        /* flex-wrap: nowrap이 기본값 */
+        .container { 
+            display: flex; flex-direction: column; 
+            border: 2px solid #000; 
+            background-color: yellow; 
+            flex-wrap: nowrap;
+            margin-bottom: 10px;
+            height: 300px;
+        }
+
+        .container>div { 
+            border: 2px solid #000; background-color: green; margin: 5px;             
+        }
+
+    </style>
+
+    <div class="container">
+        <div style="order: 3;">A</div>
+        <div style="align-self: center;">B</div>
+        <div>C</div>
+        <div>D</div>
+        <div>E</div>
+        <div style="order: 2; ">F</div>
+        <div>G</div>
+    </div>
+
+   
+</body>
+</html>
