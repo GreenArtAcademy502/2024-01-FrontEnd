@@ -7,7 +7,12 @@
 </head>
 <body>
     <style>
-        /* flex-wrap: nowrap이 기본값 */
+        /* 
+            order 기본값은 0입니다. 
+            align-self는 align-items의 item 버전
+            특정 자식 아이템만 크로스방향 컨트롤을 하고 싶을 때 사용.
+        
+        */
         .container { 
             display: flex; flex-direction: column; 
             border: 2px solid #000; 
@@ -24,12 +29,12 @@
     </style>
 
     <div class="container">
-        <div style="order: 3;">A</div>
+        <div style="order: 1;">A</div>
         <div style="align-self: center;">B</div>
         <div>C</div>
-        <div>D</div>
         <div>E</div>
-        <div style="order: 2; ">F</div>
+        <div>D</div>
+        <div style="order: -2; ">F</div>
         <div>G</div>
     </div>
 

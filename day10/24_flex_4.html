@@ -20,13 +20,13 @@
             border: 2px solid #000; background-color: green; margin: 5px; 
             flex-basis: auto; /* auto(디폴트값), 자식들의 기본 크기 설정 */
         }
-        .container2>div { flex-basis: 100px; }
-        .container3>div { min-width: 100px; }
+        .container2>div { flex-basis: 50px; } /* flex-basis로 지정한 값보다 자식이 더 커지진 않는다. max-width에 가깝다. */
+        .container3>div { max-width: 100px; }
     </style>
 
     <div class="container">
         <div>A</div>
-        <div>B</div>
+        <div>BBBBBBB</div>
         <div>C</div>
         <div>D</div>
         <div>E</div>
@@ -34,6 +34,7 @@
         <div>G</div>
     </div>
 
+    <span>container2</span>
     <div class="container container2">
         <div>A</div>
         <div>flex-basis로 처리</div>
@@ -44,9 +45,10 @@
         <div>G</div>
     </div>
 
+    <span>container3-1</span>
     <div class="container container3">
         <div>A</div>
-        <div>width로 처리</div>
+        <div>width로 처리 container-3-1</div>
         <div>C</div>
         <div>D</div>
         <div>E</div>
@@ -54,14 +56,32 @@
         <div>G</div>
     </div>
 
-    <!-- flex-grow는 남는 공간 차지하는 비율 -->
+    <span>container3-2</span>
+    <div class="container container3">
+        <div>A</div>
+        <div>width로 처리 container-3-2</div>
+        <div>C</div>
+        <div>D</div>
+        <div style="flex-basis: 100px;">E</div>
+        <div>F</div>
+        <div>G</div>
+    </div>
+
+    <!-- 
+        flex-grow는 남는 공간 차지하는 비율 
+        flex-basis값이 없을 경우 아이템의 빈공간 기준으로 비율 측정
+        flex-basis값이 있을 겨웅 아이템의 전체공간 기준으로 비율 측정
+    -->
+    <span>container4</span>
     <div class="container container4">
         <div>A</div>
-        <div style="flex-grow: 1;">flex-grow</div>
+        <div style="flex-grow: 1; flex-basis: 50px; background-color: azure;">flex-basis값 있음</div>
+        <div style="flex-grow: 1; flex-basis: 50px; background-color: azure;">F</div>
         <div>C</div>
         <div>D</div>
         <div>E</div>
-        <div style="flex-grow: 3;">F</div>
+        <div style="flex-grow: 1; background-color: azure;">flex-basis값 없음</div>
+        <div style="flex-grow: 1; background-color: azure;">F</div>
         <div>G</div>
     </div>
 
@@ -72,6 +92,7 @@
         <style>
             .container5 div { flex-basis: 70px; }
         </style>
+        <span>container5</span>
      <div class="container container5">
         <div>A</div>
         <div style="flex-shrink: 1;">flex-shrink</div>
@@ -89,19 +110,31 @@
         <style>
             .container6 div { flex-basis: 70px; }
         </style>
+        <span>container6</span>
      <div class="container container6">
         <div>A</div>
         <div style="flex-shrink: 0;">flex-shrink</div>
+        <div style="flex-shrink: 0;">F</div>
+        <div>C</div>
+        <div>D</div>
+        <div>E</div>       
+        <div>G</div>
+    </div>
+
+    <span>container7</span>
+    <div class="container container6">
+        <div>A</div>        
         <div>C</div>
         <div>D</div>
         <div>E</div>
-        <div style="flex-shrink: 0;">F</div>
+        <div style="flex-shrink: 3;">flex-shrink</div>
+        <div style="flex-shrink: 2;">F</div>
         <div>G</div>
     </div>
 
     <!-- 
 
-        flex-babis, flex-grow, flex-shrink
+        flex-grow, flex-shrink, flex-babis
 
         flex: 2 1 auto;  //2:grow, 1:shrink, auto: basis 
     -->

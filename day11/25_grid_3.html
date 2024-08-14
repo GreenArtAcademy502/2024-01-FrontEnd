@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container { 
+            background-color: beige;  display: grid; gap: 3px; 
+            grid-template-areas: 
+            " header header header "
+            "   a     main    b    "
+            " . . . "
+            " footer footer footer ";
+
+        }
+        .container > div { border: 1px solid red; }
+        /* 그리드 영역 이름 할당시 쌍따옴표, 따옴표 작성 금지  */        
+        .header { grid-area: header; }
+        .sidebar-a { grid-area: a; }
+        .main-contrent { grid-area: main; }
+        .sidebar-b { grid-area: b; }
+        .footer { grid-area: footer; }
+    </style>
+</head>
+<body>
+    <!-- 자식 아이템의 작성 순서는 상관이 없음 -->
+    <div class="container">
+        <div class="sidebar-b">b</div>
+        <div class="header">Header</div>
+        <div class="main-contrent">main</div>
+        <div class="sidebar-a">a</div>
+        <div class="footer">footer</div>
+    </div>
+</body>
+</html>

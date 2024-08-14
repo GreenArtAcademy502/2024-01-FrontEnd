@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        /* 아이템 자동 배치되는 흐름  */
+        .container { 
+            display: grid; background-color: yellow; 
+            border: 2px solid #000; 
+            border-radius: 5px;
+            padding: 5px;
+            gap: 3px;
+        }
+        .item { border: 2px solid #000; border-radius: 5px; background-color: #ff6937;}
+        /* rows / columns */
+        /* dense는 가능한 가득 채우려고 한다. */
+        .c1 { grid-template: repeat(2, 30px) / repeat(5, 60px); grid-auto-flow: dense;  }
+        .c1 > .item:first-child { grid-row: 1 / -1; grid-column: 1; }
+        .c1 > .item:last-child { grid-row: 1 / -1; grid-column: -2; }
+        .c1 > .item:nth-child(2) { grid-column: span 2; }
+        .c1 > .item:nth-child(3) { grid-column: span 2; }
+    </style>
+     <span>c1</span>
+     <div class="container c1">
+         <div class="item">A</div>
+         <div class="item">B</div>
+         <div class="item">C</div>
+         <div class="item">D</div>
+         <div class="item">E</div>
+         <div class="item">F</div>         
+         <div class="item">G</div>
+         
+     </div>
+</body>
+</html>

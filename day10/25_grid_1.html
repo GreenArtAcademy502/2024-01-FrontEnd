@@ -7,6 +7,9 @@
 </head>
 <body>
     <style>
+        /*
+            grid도 부모가 필요. 자식들 컨트롤
+        */
         .container { border: 2px solid #000; background-color: yellow; display: grid; margin-bottom: 10px; }
         .container>div { margin: 5px; border: 2px solid #111; padding: 5px; }
 
@@ -19,10 +22,22 @@
         <div>item 3</div>
         <div>item 4</div>
         <div>item 5</div>
+        <div>item 5</div>
+        <div>item 5</div>
+        <div>item 5</div>
+        <div>item 5</div>
+        <div>item 5</div>
+        <div>item 5</div>
+        <div>item 5</div>
+        <div>item 5</div>
+        <div>item 5</div>
     </div>
 
     <style>
-        .c2 { grid-template-columns: 100px 100px; grid-template-rows: auto 100px auto 150px; }
+        .c2 { 
+            grid-template-columns: 100px 100px; grid-template-rows: auto 100px auto 150px; 
+            grid-auto-rows: 300px;
+        }
     </style>
     <span>c2</span>
     <div class="container c2">
@@ -45,7 +60,12 @@
             (단위는 섞어서 사용 가능)
             grid-template-rows에서 fr을 사용하려면 height값을 지정해주어야 함
         */
-        .c3 { height: 400px; grid-template-columns: 1fr 1fr 100px; grid-template-rows: 1fr 1fr 1fr;}
+        .c3 { 
+            height: 400px;
+            grid-template-columns: 1fr 1fr 100px; 
+            grid-template-rows: 1fr 1fr 1fr;
+            /* grid-template-rows: auto auto auto; */
+        }
     </style>
     <span>c3</span>
     <div class="container c3">
@@ -66,6 +86,7 @@
         같은 값 반복은 repeat함수를 사용하여 처리
     */
         .c4 { 
+            height: 500px;
             grid-template-columns: repeat(3, 1fr);
             /*
                 grid-template-rows: 100px 1fr 100px 1fr;
@@ -85,26 +106,34 @@
         <div>item 5</div>
         <div>item 5</div>
         <div>item 5</div>
+       
     </div>
 
     <style>        
-        /* min, max값 사용 */
+        /* 
+            min, max값 사용 
+            부모의 크기가 작아지더라도 min값은 최소값 보장
+            부모의 크기가 커지더라도 max값은 최대값 제한
+            여유가 있었을 때는 max값에 가깝게 맞춤.
+        */
         .c5 { 
-            grid-template-columns: repeat(3, 1fr);
-            grid-template-rows: repeat(3, minmax(100px, auto));
+            width: 220px;
+            height: 500px;
+            grid-template-columns: repeat(3, auto);
+            grid-template-rows: repeat(3, minmax(50px, auto));
          }    
     </style>
     <span>c5</span>
     <div class="container c5">
-        <div>item 1</div>
-        <div>item 2</div>
-        <div>item 3</div>
-        <div>item 4</div>
-        <div>item 5</div>
-        <div>item 5</div>
-        <div>item 5</div>
-        <div>item 5</div>
-        <div>item 5item 5item 5item 5item 5item 5</div>
+        <div>i t e m 1</div>
+        <div>i t e m 2</div>
+        <div>i t e m 3</div>
+        <div>i t e m 4</div>
+        <div>i t e m 5</div>
+        <div>i t e m 5</div>
+        <div>i t e m 5</div>
+        <div>i t e m 5</div>        
+        <div>i t e m 5 i t e m 5 i t e m 5 i t e m 5</div>
     </div>
 
 
@@ -122,9 +151,9 @@
     </style>
     <span>c6</span>
     <div class="container c6">
-        <div>item 1</div>
-        <div>item 2</div>
-        <div>item 3</div>
+        <div>item 1 item 1 item 1</div>
+        <div>item 2 item 1 item 1</div>
+        <div>item 3 item 1 item 1</div>
         <div>item 4</div>
         <div>item 4</div>
         <div>item 4</div>
@@ -158,6 +187,34 @@
     </style>
     <span>c8</span>
     <div class="container c8">
+        <div>item 1</div>
+        <div>item 2</div>
+        <div>item 3</div>
+        <div>item 4</div>
+        <div>item 4</div>
+        <div>item 4</div>
+        <div>item 4</div>
+        <div>item 4</div>
+        <div>item 4</div>
+        <div>item 4</div>
+        <div>item 4</div>
+        <div>item 4</div>
+        <div>item 4</div>
+        
+    </div>
+
+
+
+    <style>        
+        .c9 {
+            /* grid-template의 적용 범위를 벗어난 것들의 속성 지정 template을 auto로 변경*/
+            grid-template-columns: repeat(auto-fit, minmax(50px, auto));
+            grid-template-rows: 100px 100px;
+            grid-auto-rows: 10px;
+         }
+    </style>
+    <span>c9</span>
+    <div class="container c9">
         <div>item 1</div>
         <div>item 2</div>
         <div>item 3</div>

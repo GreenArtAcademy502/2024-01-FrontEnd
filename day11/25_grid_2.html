@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        .container { 
+            display: grid; background-color: yellow; 
+            border: 2px solid #000; 
+            border-radius: 5px;
+            padding: 5px;
+            gap: 3px;
+        }
+        .item { border: 2px solid #000; border-radius: 5px; background-color: #ff6937;}
+        .c1 { grid-template-columns: repeat(3, 1fr);}
+        .c1>div:first-child { grid-column: 1 / 3; }
+    </style>
+    
+    <span>c1</span>
+    <div class="container c1">
+        <div class="item">A</div>
+        <div class="item">B</div>
+        <div class="item">C</div>
+        <div class="item">D</div>
+        <div class="item">E</div>
+        <div class="item">F</div>
+        <div class="item">G</div>
+        <div class="item">H</div>
+        <div class="item">I</div>
+    </div>
+
+
+
+    <style>
+        /*
+
+        */
+        .c2 { grid-template-columns: repeat(3, 1fr);  grid-template-rows: repeat(6, 50px); }
+        /* .item:first-child { grid-column: 1 / 3; grid-row: 1 / 4; } */
+        /* .c2 .item:first-child { grid-column: 1 / span 2; grid-row: 1 / span 3; } */
+        .c2 .item:first-child { grid-column: span 2; grid-row: span 3; } /* span n값만 작성시 1 / 가 자동으로 설정됨. */
+        .c2 .item:nth-child(6) { grid-column: 3; } /* 시작 line 변경 */
+    </style>
+    <span>c2</span>
+    <div class="container c2">
+        <div class="item">A</div>
+        <div class="item">B</div>
+        <div class="item">C</div>
+        <div class="item">D</div>
+        <div class="item">E</div>
+        <div class="item">F</div>
+        <div class="item">G</div>
+        <div class="item">H</div>
+        <div class="item">I</div>
+    </div>
+</body>
+</html>
