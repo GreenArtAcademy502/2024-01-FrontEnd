@@ -87,3 +87,37 @@ header > .slogan > h2::after { content: ''; width: 120px; height: 4px; position:
 }
 header > .slogan > h1 { font-size: 180px; line-height: 180px; color: #fff; margin: 30px auto 20px; }
 header > .slogan > p { font-size: 24px; text-transform: uppercase; color: #fff; font-family: 'Raleway', sans-serif; font-weight: bold;}
+
+/* ----------------- about me ---------- */
+.about_me { background-color: #373737; padding: 70px 70px 80px; position: relative; }
+.about_me p { width: 470px; }
+.about_me img { position: absolute; top: -55px; right: 64px; }
+main > section + section { margin-top: 244px; }
+
+/* ----------------- Latest articles ---------- */
+.latest_articles { display: flex; justify-content: center; flex-direction: column; align-items: center; }
+.latest_articles h2 { text-align: center; }
+.latest_articles_list { display: flex; justify-content: space-between;}
+.latest_articles_list li { width: 370px; }
+.latest_articles_list li:nth-child(2) { margin-top: 52px; }
+.latest_articles_list li h3 { margin-top: 29px; font-size: 22px; border-bottom: 1px solid #ad7835; padding-bottom: 13px; margin-bottom: 15px; }
+.latest_articles_list li p { margin-bottom: 30px; }
+.latest_articles_list li a { font-size: 16px; line-height: 16px; color: #ad7835; text-transform: uppercase; }
+.latest_articles_list li a img { vertical-align: 0px; margin-left: 20px; }
+
+/* ----------------- contact ---------- */
+.contact { background: #373737; padding: 70px 70px 80px; display: flex; justify-content: flex-end; position: relative; }
+.contact img { position: absolute; left: 64px; top: -55px; }
+.contact form { width: 470px; }
+.contact form .field { display: flex; justify-content: space-between; }
+.contact form .field:first-of-type{ margin-bottom: 40px; }
+.contact form .field input { width: 214px;  box-sizing: border-box; color: #fff; }
+.contact form .field input::placeholder, .contact form .field textarea::placeholder { color: #fff; }
+.contact form .field textarea { width: 100%; color: #fff; resize: none; margin-bottom: 58px; }
+
+/* ----------------- footer ---------- */
+
+footer { margin: 351px 0 190px; }
+footer .social_link { display: flex; justify-content: center; gap: 30px; }
+footer .social_link a { width: 80px; height: 80px; display: block; box-sizing: border-box; border: 1px solid #6b4922; display: flex; justify-content: center; align-items: center; font-size: 33px; color: #ad7835; transition: 0.5s; }
+footer .social_link a:hover { background: #ad7835; color: #fff; }
